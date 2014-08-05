@@ -12,11 +12,14 @@ $("class/element/id").textsive();
 #### Thats it!
 ## Settings
 ---
-Currently there are only 2 settings: maxFontSize & minFontSize. Guess what they do...
+Currently there are only 3 settings: maxFontSize, minFontSize, & lineHeight. Guess what they do...
 Usage is as with anything: 
 ```javascript
-$(".fillDiv").textsive({maxFontSize: 1000, minFontSize: 10});
+$(".fillDiv").textsive({maxFontSize: 1000, minFontSize: 10, lineHeight:0.95});
 ```
+
+Line-height is set to ***EMs*** in order to maintain relations between the lines. 0.95 is the default and seems to the sweet spot. Adjust it as you will to get a desireable effect that will scale with the container.
+
 I plan to possibly implement some more features at a future time. Perhaps the options to give your own block element to use in the expansion or assign class. I also like the idea of creating easing/animation functions to smooth the transition in size.
 
 
