@@ -6,7 +6,8 @@
     var settings = $.extend({
       minFontSize:10,
       maxFontSize:1000,
-      lineHeight:0.95
+      lineHeight:0.95,
+      scale:1.25
     },options);
     
     //Return all instances
@@ -34,7 +35,7 @@
         form a block. Clamping function for some control, but I like it without.
         */
         $this.find("div").each(function(i){
-          var c = $(this).width() / $(this).text().trim().length * 1.25;
+          var c = $(this).width() / $(this).text().trim().length * settings.scale;
           $(this).css({
               fontSize:  Math.min(Math.max(c, settings.minFontSize), settings.maxFontSize),
               lineHeight: settings.lineHeight +"em"
