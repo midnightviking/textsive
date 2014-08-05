@@ -37,7 +37,7 @@
         form a block. Clamping function for some control, but I like it without.
         */
         $this.find("div").each(function(i){
-          var c = $(this).width() / $(this).text().trim().length;
+          var c = $(this).width() / $(this).text().trim().length * 1.25;
           $(this).css({
               fontSize:  Math.min(Math.max(c, settings.minFontSize), settings.maxFontSize) 
           });
