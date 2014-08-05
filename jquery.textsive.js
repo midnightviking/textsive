@@ -5,7 +5,8 @@
     //Accept Options
     var settings = $.extend({
       minFontSize:10,
-      maxFontSize:1000
+      maxFontSize:1000,
+      lineHeight:0.95
     },options);
     
     //Return all instances
@@ -26,11 +27,7 @@
       
       //So heres the function that gets called whenever the window is resized.
       //Already setup the "line-breaks" so we don't have to reconstruct those
-      var resizeMe = function(){
-          $this.css({
-            color    : settings.color
-          });
-        
+      var resizeMe = function(){        
         /*So the thought here is to take the width of the container divided
         by the number of characters. Instead of the text being uniformly the
         the same size  I can get that nice scale variance where the characters
@@ -39,7 +36,8 @@
         $this.find("div").each(function(i){
           var c = $(this).width() / $(this).text().trim().length * 1.25;
           $(this).css({
-              fontSize:  Math.min(Math.max(c, settings.minFontSize), settings.maxFontSize) 
+              fontSize:  Math.min(Math.max(c, settings.minFontSize), settings.maxFontSize),
+              lineHeight: settings.lineHeight +"em"
           });
         });
       };
